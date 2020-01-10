@@ -42,11 +42,17 @@
             this.AvailablePortsLabel = new System.Windows.Forms.Label();
             this.AvailablePortsList = new System.Windows.Forms.ComboBox();
             this.SerialPortGroupBox = new System.Windows.Forms.GroupBox();
+            this.SingleCommand = new System.Windows.Forms.GroupBox();
+            this.labelCommand = new System.Windows.Forms.Label();
+            this.TextBox_CommandToSend = new System.Windows.Forms.TextBox();
+            this.Button_CommandSend = new System.Windows.Forms.Button();
             this.SerialPortGroupBox.SuspendLayout();
+            this.SingleCommand.SuspendLayout();
             this.SuspendLayout();
             // 
             // Button_Zadzwon
             // 
+            this.Button_Zadzwon.Enabled = false;
             this.Button_Zadzwon.Location = new System.Drawing.Point(12, 12);
             this.Button_Zadzwon.Name = "Button_Zadzwon";
             this.Button_Zadzwon.Size = new System.Drawing.Size(164, 39);
@@ -64,6 +70,7 @@
             // 
             // Button_Czuwaj
             // 
+            this.Button_Czuwaj.Enabled = false;
             this.Button_Czuwaj.Location = new System.Drawing.Point(12, 66);
             this.Button_Czuwaj.Name = "Button_Czuwaj";
             this.Button_Czuwaj.Size = new System.Drawing.Size(391, 39);
@@ -75,6 +82,7 @@
             // Button_Odbierz
             // 
             this.Button_Odbierz.BackColor = System.Drawing.Color.Green;
+            this.Button_Odbierz.Enabled = false;
             this.Button_Odbierz.Location = new System.Drawing.Point(12, 123);
             this.Button_Odbierz.Name = "Button_Odbierz";
             this.Button_Odbierz.Size = new System.Drawing.Size(391, 39);
@@ -84,6 +92,7 @@
             // 
             // Button_Rozlacz
             // 
+            this.Button_Rozlacz.Enabled = false;
             this.Button_Rozlacz.Location = new System.Drawing.Point(12, 178);
             this.Button_Rozlacz.Name = "Button_Rozlacz";
             this.Button_Rozlacz.Size = new System.Drawing.Size(391, 39);
@@ -94,7 +103,7 @@
             // 
             // Button_Exit
             // 
-            this.Button_Exit.Location = new System.Drawing.Point(12, 233);
+            this.Button_Exit.Location = new System.Drawing.Point(21, 641);
             this.Button_Exit.Name = "Button_Exit";
             this.Button_Exit.Size = new System.Drawing.Size(391, 39);
             this.Button_Exit.TabIndex = 5;
@@ -106,6 +115,7 @@
             // 
             this.TerminalOutput.Location = new System.Drawing.Point(430, 53);
             this.TerminalOutput.Name = "TerminalOutput";
+            this.TerminalOutput.ReadOnly = true;
             this.TerminalOutput.Size = new System.Drawing.Size(922, 638);
             this.TerminalOutput.TabIndex = 6;
             this.TerminalOutput.Text = "";
@@ -180,20 +190,62 @@
             this.SerialPortGroupBox.Controls.Add(this.DisconnectButton);
             this.SerialPortGroupBox.Controls.Add(this.AvailablePortsLabel);
             this.SerialPortGroupBox.Controls.Add(this.AvailablePortsList);
-            this.SerialPortGroupBox.Location = new System.Drawing.Point(13, 547);
+            this.SerialPortGroupBox.Location = new System.Drawing.Point(12, 299);
             this.SerialPortGroupBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.SerialPortGroupBox.Name = "SerialPortGroupBox";
             this.SerialPortGroupBox.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.SerialPortGroupBox.Size = new System.Drawing.Size(382, 128);
+            this.SerialPortGroupBox.Size = new System.Drawing.Size(390, 120);
             this.SerialPortGroupBox.TabIndex = 15;
             this.SerialPortGroupBox.TabStop = false;
             this.SerialPortGroupBox.Text = "Serial port";
             // 
-            // Form1
+            // SingleCommand
+            // 
+            this.SingleCommand.Controls.Add(this.Button_CommandSend);
+            this.SingleCommand.Controls.Add(this.TextBox_CommandToSend);
+            this.SingleCommand.Controls.Add(this.labelCommand);
+            this.SingleCommand.Location = new System.Drawing.Point(12, 443);
+            this.SingleCommand.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.SingleCommand.Name = "SingleCommand";
+            this.SingleCommand.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.SingleCommand.Size = new System.Drawing.Size(390, 77);
+            this.SingleCommand.TabIndex = 16;
+            this.SingleCommand.TabStop = false;
+            this.SingleCommand.Text = "Single commands";
+            // 
+            // labelCommand
+            // 
+            this.labelCommand.AutoSize = true;
+            this.labelCommand.Location = new System.Drawing.Point(9, 34);
+            this.labelCommand.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelCommand.Name = "labelCommand";
+            this.labelCommand.Size = new System.Drawing.Size(81, 20);
+            this.labelCommand.TabIndex = 10;
+            this.labelCommand.Text = "Komenda:";
+            // 
+            // TextBox_CommandToSend
+            // 
+            this.TextBox_CommandToSend.Location = new System.Drawing.Point(97, 28);
+            this.TextBox_CommandToSend.Name = "TextBox_CommandToSend";
+            this.TextBox_CommandToSend.Size = new System.Drawing.Size(150, 26);
+            this.TextBox_CommandToSend.TabIndex = 11;
+            // 
+            // Button_CommandSend
+            // 
+            this.Button_CommandSend.Enabled = false;
+            this.Button_CommandSend.Location = new System.Drawing.Point(256, 28);
+            this.Button_CommandSend.Name = "Button_CommandSend";
+            this.Button_CommandSend.Size = new System.Drawing.Size(112, 29);
+            this.Button_CommandSend.TabIndex = 17;
+            this.Button_CommandSend.Text = "Wyślij";
+            this.Button_CommandSend.UseVisualStyleBackColor = true;
+            // 
+            // MJ_HK_ModemApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1364, 703);
+            this.Controls.Add(this.SingleCommand);
             this.Controls.Add(this.SerialPortGroupBox);
             this.Controls.Add(this.labelTerminal);
             this.Controls.Add(this.TerminalOutput);
@@ -203,10 +255,12 @@
             this.Controls.Add(this.Button_Czuwaj);
             this.Controls.Add(this.TextBox_SecondModem);
             this.Controls.Add(this.Button_Zadzwon);
-            this.Name = "Form1";
+            this.Name = "MJ_HK_ModemApp";
             this.Text = "Form1";
             this.SerialPortGroupBox.ResumeLayout(false);
             this.SerialPortGroupBox.PerformLayout();
+            this.SingleCommand.ResumeLayout(false);
+            this.SingleCommand.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -228,6 +282,10 @@
         private System.Windows.Forms.Label AvailablePortsLabel;
         private System.Windows.Forms.ComboBox AvailablePortsList;
         private System.Windows.Forms.GroupBox SerialPortGroupBox;
+        private System.Windows.Forms.GroupBox SingleCommand;
+        private System.Windows.Forms.Label labelCommand;
+        private System.Windows.Forms.Button Button_CommandSend;
+        private System.Windows.Forms.TextBox TextBox_CommandToSend;
     }
 }
 
