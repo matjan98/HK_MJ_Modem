@@ -20,6 +20,9 @@ namespace MJ_HK_modem
         public MJ_HK_ModemApp()
         {
             InitializeComponent();
+            AppendCommandLineToTerminalOutput("test");
+            AppendCommandLineToTerminalOutputResponse("odpowiedz");
+            AppendCommandLineToTerminalOutput("dalem gitare");
         }
 
         private void Button_Zadzwon_Click(object sender, EventArgs e)
@@ -83,9 +86,11 @@ namespace MJ_HK_modem
 
         public void AppendCommandLineToTerminalOutput(string commandLine)
         {
-            throw new NotFiniteNumberException();
-
-            //this.TerminalOutput.Text;
+            this.TerminalOutput.Text = this.TerminalOutput.Text + ">" + commandLine + "\n";
+        }
+        public void AppendCommandLineToTerminalOutputResponse(string commandLine)
+        {
+            this.TerminalOutput.Text = this.TerminalOutput.Text + "#" + commandLine+ "\n";
         }
     }
 }
