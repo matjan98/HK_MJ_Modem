@@ -17,6 +17,7 @@ namespace MJ_HK_modem
         private readonly string connectionSuccess = "Successfully connected to a specified port!";
         private readonly string connectionError = "Couldn't connect to a specified port!";
         private readonly string inputError = "There was no port selected!";
+        private delegate void NotifyTextReceived();
 
         public MJ_HK_ModemApp()
         {
@@ -34,8 +35,11 @@ namespace MJ_HK_modem
         public void DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
             var data = ((SerialPort)sender).ReadExisting();
-            AppendCommandLineToTerminalOutputResponse(data.TrimStart());
-            if(data.ToLower().Replace(" ",  "") == "ring")
+            this.Invoke(new NotifyTextReceived(() =>
+            {
+                AppendCommandLineToTerminalOutputResponse(data.TrimStart());
+            }));
+            if (data.ToLower().Replace(" ",  "") == "ring")
             {
                 Button_Odbierz.Enabled = true;
                 Button_Rozlacz.Enabled = true;
