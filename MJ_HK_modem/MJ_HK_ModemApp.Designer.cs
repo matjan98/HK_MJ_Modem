@@ -1,6 +1,6 @@
 ﻿namespace MJ_HK_modem
 {
-    partial class Form1
+    partial class MJ_HK_ModemApp
     {
         /// <summary>
         /// Required designer variable.
@@ -34,7 +34,7 @@
             this.Button_Odbierz = new System.Windows.Forms.Button();
             this.Button_Rozlacz = new System.Windows.Forms.Button();
             this.Button_Exit = new System.Windows.Forms.Button();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.TerminalOutput = new System.Windows.Forms.RichTextBox();
             this.labelTerminal = new System.Windows.Forms.Label();
             this.RefreshButton = new System.Windows.Forms.Button();
             this.ConnectButton = new System.Windows.Forms.Button();
@@ -102,13 +102,13 @@
             this.Button_Exit.UseVisualStyleBackColor = true;
             this.Button_Exit.Click += new System.EventHandler(this.Button_Exit_Click);
             // 
-            // richTextBox1
+            // TerminalOutput
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(430, 53);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(922, 638);
-            this.richTextBox1.TabIndex = 6;
-            this.richTextBox1.Text = "";
+            this.TerminalOutput.Location = new System.Drawing.Point(430, 53);
+            this.TerminalOutput.Name = "TerminalOutput";
+            this.TerminalOutput.Size = new System.Drawing.Size(922, 638);
+            this.TerminalOutput.TabIndex = 6;
+            this.TerminalOutput.Text = "";
             // 
             // labelTerminal
             // 
@@ -196,7 +196,7 @@
             this.ClientSize = new System.Drawing.Size(1364, 703);
             this.Controls.Add(this.SerialPortGroupBox);
             this.Controls.Add(this.labelTerminal);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.TerminalOutput);
             this.Controls.Add(this.Button_Exit);
             this.Controls.Add(this.Button_Rozlacz);
             this.Controls.Add(this.Button_Odbierz);
@@ -220,7 +220,7 @@
         private System.Windows.Forms.Button Button_Odbierz;
         private System.Windows.Forms.Button Button_Rozlacz;
         private System.Windows.Forms.Button Button_Exit;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox TerminalOutput;
         private System.Windows.Forms.Label labelTerminal;
         private System.Windows.Forms.Button RefreshButton;
         private System.Windows.Forms.Button ConnectButton;

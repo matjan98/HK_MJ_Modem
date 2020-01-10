@@ -16,7 +16,7 @@ namespace MJ_HK_modem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new MJ_HK_ModemApp());
         }
     }
 }
