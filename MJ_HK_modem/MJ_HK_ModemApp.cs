@@ -38,12 +38,12 @@ namespace MJ_HK_modem
             this.Invoke(new NotifyTextReceived(() =>
             {
                 AppendCommandLineToTerminalOutputResponse(data.TrimStart());
+                if (data.ToLower().Replace(" ", "").Contains("ring"))
+                {
+                    Button_Odbierz.Enabled = true;
+                    Button_Rozlacz.Enabled = true;
+                }
             }));
-            if (data.ToLower().Replace(" ",  "") == "ring")
-            {
-                Button_Odbierz.Enabled = true;
-                Button_Rozlacz.Enabled = true;
-            }
         }
 
         private void Button_Zadzwon_Click(object sender, EventArgs e)
@@ -90,6 +90,7 @@ namespace MJ_HK_modem
                     DisconnectButton.Enabled = true;
                     Button_Czuwaj.Enabled = true;
                     Button_Zadzwon.Enabled = true;
+                    Button_CommandSend.Enabled = true;
 
                     AppendCommandLineToTerminalOutput("Success - Connected");
                 }
@@ -104,6 +105,7 @@ namespace MJ_HK_modem
             ConnectButton.Enabled = true;
             DisconnectButton.Enabled = false;
             Button_Czuwaj.Enabled = false;
+            Button_CommandSend.Enabled = false;
             Button_Zadzwon.Enabled = false;
         }
 
