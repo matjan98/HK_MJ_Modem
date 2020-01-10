@@ -86,11 +86,26 @@ namespace MJ_HK_modem
 
         public void AppendCommandLineToTerminalOutput(string commandLine)
         {
-            this.TerminalOutput.Text = this.TerminalOutput.Text + ">" + commandLine + "\n";
+            // this.TerminalOutput.Text = this.TerminalOutput.Text + ">" + commandLine + "\n"; ;
+            TerminalOutput.SelectionStart = TerminalOutput.TextLength;
+            TerminalOutput.SelectionLength = 0;
+            commandLine = "> " + commandLine + "\n";
+            TerminalOutput.SelectionColor = Color.Red;
+            TerminalOutput.AppendText(commandLine);
+            TerminalOutput.SelectionColor = TerminalOutput.ForeColor;
+            //String tekst = ">" + commandLine + "\n"; 
+            //this.TerminalOutput.ForeColor = Color.Red;
         }
         public void AppendCommandLineToTerminalOutputResponse(string commandLine)
         {
-            this.TerminalOutput.Text = this.TerminalOutput.Text + "#" + commandLine+ "\n";
+            TerminalOutput.SelectionStart = TerminalOutput.TextLength;
+            TerminalOutput.SelectionLength = 0;
+            commandLine = "# " + commandLine + "\n";
+            TerminalOutput.SelectionColor = Color.Blue;
+            TerminalOutput.AppendText(commandLine);
+            TerminalOutput.SelectionColor = TerminalOutput.ForeColor;
+            //this.TerminalOutput.Text = this.TerminalOutput.Text + "#" + commandLine+ "\n";
         }
+
     }
 }
