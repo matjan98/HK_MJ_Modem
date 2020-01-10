@@ -89,6 +89,7 @@
             this.Button_Odbierz.TabIndex = 3;
             this.Button_Odbierz.Text = "Odbierz";
             this.Button_Odbierz.UseVisualStyleBackColor = false;
+            this.Button_Odbierz.Click += new System.EventHandler(this.Button_Odbierz_Click);
             // 
             // Button_Rozlacz
             // 
@@ -239,6 +240,7 @@
             this.Button_CommandSend.TabIndex = 17;
             this.Button_CommandSend.Text = "Wyślij";
             this.Button_CommandSend.UseVisualStyleBackColor = true;
+            this.Button_CommandSend.Click += new System.EventHandler(this.Button_CommandSend_Click);
             // 
             // MJ_HK_ModemApp
             // 
