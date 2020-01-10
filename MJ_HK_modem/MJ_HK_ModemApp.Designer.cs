@@ -30,7 +30,6 @@
         {
             this.Button_Zadzwon = new System.Windows.Forms.Button();
             this.TextBox_SecondModem = new System.Windows.Forms.TextBox();
-            this.Button_Czuwaj = new System.Windows.Forms.Button();
             this.Button_Odbierz = new System.Windows.Forms.Button();
             this.Button_Rozlacz = new System.Windows.Forms.Button();
             this.Button_Exit = new System.Windows.Forms.Button();
@@ -43,9 +42,9 @@
             this.AvailablePortsList = new System.Windows.Forms.ComboBox();
             this.SerialPortGroupBox = new System.Windows.Forms.GroupBox();
             this.SingleCommand = new System.Windows.Forms.GroupBox();
-            this.labelCommand = new System.Windows.Forms.Label();
-            this.TextBox_CommandToSend = new System.Windows.Forms.TextBox();
             this.Button_CommandSend = new System.Windows.Forms.Button();
+            this.TextBox_CommandToSend = new System.Windows.Forms.TextBox();
+            this.labelCommand = new System.Windows.Forms.Label();
             this.SerialPortGroupBox.SuspendLayout();
             this.SingleCommand.SuspendLayout();
             this.SuspendLayout();
@@ -68,22 +67,11 @@
             this.TextBox_SecondModem.Size = new System.Drawing.Size(221, 26);
             this.TextBox_SecondModem.TabIndex = 1;
             // 
-            // Button_Czuwaj
-            // 
-            this.Button_Czuwaj.Enabled = false;
-            this.Button_Czuwaj.Location = new System.Drawing.Point(12, 66);
-            this.Button_Czuwaj.Name = "Button_Czuwaj";
-            this.Button_Czuwaj.Size = new System.Drawing.Size(391, 39);
-            this.Button_Czuwaj.TabIndex = 2;
-            this.Button_Czuwaj.Text = "Włącz czuwanie";
-            this.Button_Czuwaj.UseVisualStyleBackColor = true;
-            this.Button_Czuwaj.Click += new System.EventHandler(this.Button_Czuwaj_Click);
-            // 
             // Button_Odbierz
             // 
             this.Button_Odbierz.BackColor = System.Drawing.Color.Green;
             this.Button_Odbierz.Enabled = false;
-            this.Button_Odbierz.Location = new System.Drawing.Point(12, 123);
+            this.Button_Odbierz.Location = new System.Drawing.Point(12, 75);
             this.Button_Odbierz.Name = "Button_Odbierz";
             this.Button_Odbierz.Size = new System.Drawing.Size(391, 39);
             this.Button_Odbierz.TabIndex = 3;
@@ -94,7 +82,7 @@
             // Button_Rozlacz
             // 
             this.Button_Rozlacz.Enabled = false;
-            this.Button_Rozlacz.Location = new System.Drawing.Point(12, 178);
+            this.Button_Rozlacz.Location = new System.Drawing.Point(12, 130);
             this.Button_Rozlacz.Name = "Button_Rozlacz";
             this.Button_Rozlacz.Size = new System.Drawing.Size(391, 39);
             this.Button_Rozlacz.TabIndex = 4;
@@ -214,23 +202,6 @@
             this.SingleCommand.TabStop = false;
             this.SingleCommand.Text = "Single commands";
             // 
-            // labelCommand
-            // 
-            this.labelCommand.AutoSize = true;
-            this.labelCommand.Location = new System.Drawing.Point(9, 34);
-            this.labelCommand.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelCommand.Name = "labelCommand";
-            this.labelCommand.Size = new System.Drawing.Size(81, 20);
-            this.labelCommand.TabIndex = 10;
-            this.labelCommand.Text = "Komenda:";
-            // 
-            // TextBox_CommandToSend
-            // 
-            this.TextBox_CommandToSend.Location = new System.Drawing.Point(97, 28);
-            this.TextBox_CommandToSend.Name = "TextBox_CommandToSend";
-            this.TextBox_CommandToSend.Size = new System.Drawing.Size(150, 26);
-            this.TextBox_CommandToSend.TabIndex = 11;
-            // 
             // Button_CommandSend
             // 
             this.Button_CommandSend.Enabled = false;
@@ -241,6 +212,23 @@
             this.Button_CommandSend.Text = "Wyślij";
             this.Button_CommandSend.UseVisualStyleBackColor = true;
             this.Button_CommandSend.Click += new System.EventHandler(this.Button_CommandSend_Click);
+            // 
+            // TextBox_CommandToSend
+            // 
+            this.TextBox_CommandToSend.Location = new System.Drawing.Point(97, 28);
+            this.TextBox_CommandToSend.Name = "TextBox_CommandToSend";
+            this.TextBox_CommandToSend.Size = new System.Drawing.Size(150, 26);
+            this.TextBox_CommandToSend.TabIndex = 11;
+            // 
+            // labelCommand
+            // 
+            this.labelCommand.AutoSize = true;
+            this.labelCommand.Location = new System.Drawing.Point(9, 34);
+            this.labelCommand.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelCommand.Name = "labelCommand";
+            this.labelCommand.Size = new System.Drawing.Size(81, 20);
+            this.labelCommand.TabIndex = 10;
+            this.labelCommand.Text = "Komenda:";
             // 
             // MJ_HK_ModemApp
             // 
@@ -254,7 +242,6 @@
             this.Controls.Add(this.Button_Exit);
             this.Controls.Add(this.Button_Rozlacz);
             this.Controls.Add(this.Button_Odbierz);
-            this.Controls.Add(this.Button_Czuwaj);
             this.Controls.Add(this.TextBox_SecondModem);
             this.Controls.Add(this.Button_Zadzwon);
             this.Name = "MJ_HK_ModemApp";
@@ -272,7 +259,6 @@
 
         private System.Windows.Forms.Button Button_Zadzwon;
         private System.Windows.Forms.TextBox TextBox_SecondModem;
-        private System.Windows.Forms.Button Button_Czuwaj;
         private System.Windows.Forms.Button Button_Odbierz;
         private System.Windows.Forms.Button Button_Rozlacz;
         private System.Windows.Forms.Button Button_Exit;

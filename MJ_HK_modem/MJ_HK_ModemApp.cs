@@ -53,12 +53,6 @@ namespace MJ_HK_modem
             AppendCommandLineToTerminalOutput(command);
         }
 
-        private void Button_Czuwaj_Click(object sender, EventArgs e)
-        {
-            string command = "ath";
-            serialDriver.TransmitData(command);
-            AppendCommandLineToTerminalOutput(command);
-        }
 
         private void Button_Odbierz_Click(object sender, EventArgs e)
         {
@@ -69,7 +63,7 @@ namespace MJ_HK_modem
 
         private void Button_Rozlacz_Click(object sender, EventArgs e)
         {
-            string command = "atr";
+            string command = "+++ATH";
             serialDriver.TransmitData(command);
             AppendCommandLineToTerminalOutput(command);
         }
@@ -88,7 +82,6 @@ namespace MJ_HK_modem
                 {
                     ConnectButton.Enabled = false;
                     DisconnectButton.Enabled = true;
-                    Button_Czuwaj.Enabled = true;
                     Button_Zadzwon.Enabled = true;
                     Button_CommandSend.Enabled = true;
 
@@ -104,7 +97,6 @@ namespace MJ_HK_modem
             serialDriver.Disconnect();
             ConnectButton.Enabled = true;
             DisconnectButton.Enabled = false;
-            Button_Czuwaj.Enabled = false;
             Button_CommandSend.Enabled = false;
             Button_Zadzwon.Enabled = false;
         }
